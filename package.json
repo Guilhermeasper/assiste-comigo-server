@@ -1,0 +1,30 @@
+{
+  "name": "assiste-comigo-server",
+  "version": "0.0.1",
+  "description": "Server to handle the Assiste Comigo extension sessions",
+  "main": "dist",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "eslint": "^8.47.0",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "tslib": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/morgan": "^1.9.4",
+    "@types/node": "^18.17.5",
+    "typescript": "5.1.6"
+  },
+  "scripts": {
+    "build": "npm run tsc",
+    "tsc": "tsc -p tsconfig.json",
+    "dev": "tsc --watch & NODE_ENV=development nodemon dist",
+    "test": "tsc && ./node_modules/.bin/mocha dist/**/*.spec.js",
+    "lint": "tslint 'src/**/*.ts' --fix",
+    "clean": "rm -rf dist/ .logs/",
+    "start": "node dist"
+  },
+  "author": "Guilherme Afonso",
+  "license": "ISC"
+}
